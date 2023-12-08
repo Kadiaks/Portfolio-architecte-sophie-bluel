@@ -37,7 +37,7 @@ body {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 header {
@@ -47,7 +47,11 @@ header {
 }
 
 section {
-	margin: 50px 0
+	display: flex;
+	flex-direction: column;
+	margin: 50px 0;
+	align-items: center;
+	justify-content: center;
 }
 
 h1{
@@ -63,13 +67,13 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
+	margin: 20px 0;
 	color: #1D6154
 }
 
@@ -77,7 +81,6 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
 
 nav li {
@@ -95,63 +98,74 @@ li:hover {
 }
 
 #login {
+	display: flex;
+	flex-direction: column;
 	width: 50%;
     margin: auto;
-    margin-bottom: 355px;
+    margin-bottom: 345px;
 }
 
 #login > * {
 	text-align: center;
-
-}
-
-#login h2{
-	margin-bottom: 9px;
 }
 
 #login form {
 	text-align: left;
-	margin-top:9px;
 	display: flex;
 	flex-direction: column;
 }
 
-#login input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+#loginForm {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+    margin: auto;
 }
 
 #email,
 #password {
+	display: flex;
 	padding-left: 20px;
 	font-family: 'Work Sans';
+	font-size: 1.2em;
 	font-style: normal;
+	text-align: left;
+	height: 50px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-#login label {
+#loginForm label {
+	display: flex;
 	margin: 2em 0 7px 0;
+	font-size: 16px;
+	font-weight: 500;
 }
 
-#login input[type="submit"]{
+#loginButton {
+	display: flex;
 	font-family: 'Syne';
 	font-weight: 700;
-    font-size: 14px;
+	font-size: 16px;
 	color: white;
 	background-color: #1D6154;
-	margin : 37px auto 28px auto;
-	width: 180px;
-    height: 34px;
+	margin: 2em auto;
+    height: 45px;
 	text-align: center;
 	border-radius: 60px ;
 	cursor: pointer;
+}
+
+input[type="submit"]{
+	padding: 10px 30px;
 }
 
 #login a {
     display: flex;
     justify-content: center;
     color: #3D3D3D;
+	margin-bottom: 20px;
+	text-decoration-line: underline;
 }
 
 footer {
