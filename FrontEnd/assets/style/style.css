@@ -53,14 +53,11 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
-}
-
-#logout {
-	display: none;
 }
 
 section {
@@ -85,34 +82,14 @@ h1 > span {
 .project {
 	display: inline;
 }
-
+.hidden {
+display: none;
+}
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
 	color: #1D6154
-}
-
-.project a {
-	display: none;
-}
-
-.modifier {
-	color: #000000;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 16px;
-	text-align: center;
-}
-
-.modifier:link,
-.modifier:hover,
-.modifier:visited {
-	text-decoration: none;
-}
-
-.modifier span {
-	margin-left: 8px;
 }
 
 nav ul {
@@ -126,8 +103,19 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+li:hover,
+#login a:hover {
 	color: #B1663C;
+}
+
+#login a {
+	text-decoration: none;
+	color: #000000;
+}
+
+#log {
+	color: #000000;
+	font-weight: 600;
 }
 
 #introduction {
@@ -156,6 +144,10 @@ li:hover {
 	margin-bottom: 0.5em;
 }
 
+#portfolio {
+	margin-top: 140px;
+}
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
@@ -169,9 +161,15 @@ li:hover {
 	grid-row-gap: 20px;
 }
 
-.gallery img {
-	width: 100%;
+.gallery figure {
+	display: flex;
+	flex-direction: column;
+}
 
+.gallery img {
+	flex-grow: 1;
+	width: 100%;
+	object-fit: cover;
 }
 
 #contact {
@@ -252,4 +250,80 @@ button {
 button:hover {
     background-color: #1D6154;;
     color: #FFF;
+}
+
+.mode-edition {
+	margin: 0;
+	height: 50px;
+	background-color: #000000;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mode-edition > .fa-regular {
+	font-size: 16px;
+}
+
+.mode-edition > span {
+	margin-left: 12px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.project {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 51px;
+	gap: 31px;
+}
+
+.modifier {
+	color: #000000;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+}
+
+.modifier:link,
+.modifier:hover,
+.modifier:visited {
+	text-decoration: none;
+}
+
+.modifier span {
+	margin-left: 8px;
+}
+
+#filtres {
+	display: flex;
+	justify-content: center;
+	margin-top: 51px;
+	margin-bottom: 51px;
+	gap: 10px;
+}
+
+#filtres li {
+	height: 37px;
+	box-sizing: border-box;
+	color: #1D6154;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 20px;
+	font-weight: 700;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#filtres li:visited,
+#filtres li:hover {
+	background-color: #1D6154;
+    color: #FFFFFF;
 }

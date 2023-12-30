@@ -14,6 +14,11 @@
 </head>
 
 <body>
+	<div class="connection-required mode-edition hidden">
+		<i class="fa-regular fa-pen-to-square"></i>
+		<span>Mode édition</span>
+	</div>
+	
 	<header>
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 		<nav>
@@ -26,41 +31,80 @@
 			</ul>
 		</nav>
 	</header>
+	
 	<main>
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
-			</figure>
-			<article>
-				<h2>Designer d'espace</h2>
-				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
-					finale du chantier.</p>
-				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
-					couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
-					chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
-					décorateur(trice)</p>
-			</article>
-		</section>
-
-		<section id="portfolio">
-			<div class="project">
-				<h2>Mes Projets</h2>
-				<a class="connection-required hidden modifier" href="#modale">
+				<a class="connection-required hidden modifier" href="#modal1">
 					<i class="fa-regular fa-pen-to-square"></i>
 					<span>modifier</span>
 				</a>
-				
-
-				<div class="filters">
-					
-				</div>
-				<div class="gallery">
-					
-				</div>
-
-
+			</figure>
+			<article>
+				<a class="connection-required hidden modifier" href="#modal1">
+					<i class="fa-regular fa-pen-to-square"></i>
+					<span>modifier</span>
+				</a>
+				<h2>Designer d'espace</h2>
+				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+				<p>En cas de besoin, une équipe pluridisciplinaire peut être constituée : architecte DPLG, décorateur(trice).</p>
+			</article>
 		</section>
+	
+		<section id="portfolio">
+			<div class="projets">
+				<h2>Mes Projets</h2>
+				<a class="connection-required hidden modifier" href="#modal1">
+					<i class="fa-regular fa-pen-to-square"></i>
+					<span>modifier</span>
+				</a>
+			</div>
+			
+			<div id="modal1" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="titlemodal1">
+				<div class="modal-wrapper">
+					<i class="fa-solid fa-arrow-left mode-ajout"></i>
+					<i class="fa-solid fa-x"></i>
+					<header>
+						<h3 id="titlemodal1" class="title-modal mode-presentation">Galerie photo</h3>
+						<h3 id="titlemodal2" class="title-modal mode-ajout">Ajout photo</h3>
+					</header>
+					<div class="gallery-modal mode-presentation">
+					</div>
+					<form id="ajoutPhotoForm" class="mode-ajout" action="http://localhost:5678/api/works" method="post" enctype="multipart/form-data">
+						<label for="image" class="image-custom">
+								<i class="fa-regular fa-image image-custom-element"></i>
+								<span class="btn-photo image-custom-element">+ Ajouter photo</span>
+								<span class="image-custom-element">jpg, png : 4mo max</span>
+						</label>
+						<input type="file" name="image" id="image" accept=".png, .jpg, .jpeg" class="hidden">
+						<label for="title">Titre</label>
+						<input type="text" name="title" id="title">
+						<label for="category-project">Catégorie</label>
+						<select name="category" id="category-project">
+							<option value="1">Objet</option>
+							<option value="2">Appartement</option>
+							<option value="3">Bar & Restaurant</option>
+						</select>
+						<div class="div-validerButton">
+							<input class="validerButton" type="submit" value="Valider">
+						</div>
+					</form>
+					<div class="buttons-modal mode-presentation">
+						<button class="mode-presentation" id="btn-add">Ajouter une photo</button>
+						<button class="mode-presentation" id="btn-suppr">Supprimer la galerie</button>
+					</div>
+				</div>
+			</div>
+	
+			<ul id="filtres">
+			</ul>
+	
+			<div class="gallery">
+			</div>
+		</section>
+	
 		<section id="contact">
 			<h2>Contact</h2>
 			<p>Vous avez un projet ? Discutons-en !</p>
@@ -75,7 +119,7 @@
 			</form>
 		</section>
 	</main>
-
+	
 	<footer>
 		<nav>
 			<ul>
@@ -83,8 +127,9 @@
 			</ul>
 		</nav>
 	</footer>
-
+	
 	<script type="module" src="./scripts/index.js"></script>
-</body>
+	<script type="module" src="./scripts/modales.js"></script>
+	</body>
 
 </html>

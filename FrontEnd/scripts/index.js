@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             connectionRequiredElements[i].classList.remove("hidden")
         };
 
-        const allFilterElements = document.querySelector(".filters");
+        const allFilterElements = document.querySelector("#filtres");
         allFilterElements.classList.add("hidden");
 
         const login = document.getElementById("login");
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // 1.2 Réalisation du filtre des travaux
 
     // A. filtre tous
-    const allFilterElements = document.querySelector(".filters");
+    const allFilterElements = document.querySelector("#filtres");
     const tousFilter = document.createElement("button");
     tousFilter.textContent = "Tous";
     console.log(allFilterElements);
