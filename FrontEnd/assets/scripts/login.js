@@ -1,13 +1,15 @@
-// Executing JS code when the page is loaded
+// Exécuter du code JS lorsque la page est chargée
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('user-login-form').addEventListener('submit', function(event) {
 		event.preventDefault();
-		// Gathering data from form
+		
+        // Collecte de données à partir d'un formulaire
 		const user = {
 			email: document.querySelector('#email').value,
 			password: document.querySelector('#password').value,
 		};
-		// Sending request in order to authentificate
+		
+        // Envoi d'une demande d'authentification
 		fetch('http://localhost:5678/api/users/login', {
 			method: 'POST',
 			headers: {
@@ -38,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log(data);
 			localStorage.setItem('token', data.token);
 			localStorage.setItem('userId', data.userId);
-			// Redirect to 'index.html'
+			
+            // Redirection vers 'index.html'
 			location.href = 'index.html';
 		})
 		.catch(function(err) {
